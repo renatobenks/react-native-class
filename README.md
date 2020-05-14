@@ -5,12 +5,10 @@ A class based project, built to help people participating on a grow-up career pr
 > The project below was inspired in the program goals based on the students expertise
 and background
 
-Topics
+Topics _(⚠️  MISSING UPDATE)_
 ---
-
-> MISSING UPDATE
-
-Requirements _(MISSING TRANSLATE AND UPDATE)_
+ 
+Requirements _(⚠️  MISSING TRANSLATE AND UPDATE)_
 ---
 
 Este projeto é um aplicativo usado para integrar novos integrantes no
@@ -26,7 +24,7 @@ cada integrante da plataforma e de um leitor de códigos QR, para ler o conteúd
 códigos, que contém as informações pessoais públicas do integrante, para promover de maneira
 simples e fácil, o acesso as redes sociais do integrante.
 
-Instructions _(MISSING TRANSLATE)_
+Instructions _(⚠️  MISSING TRANSLATE)_
 ---
 
 > Todas as configurações necessárias já foram criadas, se sentir
