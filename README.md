@@ -4,68 +4,35 @@ A class based project, built to help people participating on a grow-up career pr
 
 > The project below was inspired in the program goals based on the students expertise
 and background
-
-Topics _(⚠️  MISSING UPDATE)_
----
  
-Requirements _(⚠️  MISSING TRANSLATE AND UPDATE)_
+Introduction
 ---
 
-Este projeto é um aplicativo usado para integrar novos integrantes no
-programa #AceleraDev de React Native, através dos primeiros que eles
-precisam realizar antes de iniciar as aulas, e após a conclusão dos passos,
-promover a interação com integrações estes os mesmos. As informações estão
-necessário no momento, estão todas em arquivos JSON de forma estática.
+This project is an application used to integrate new students into the #AceleraDev React Native program, through the first ones they need to do before starting classes, and after the completion of the steps, promote interaction with integrations of these same ones. The information is needed at the moment, it is all in JSON files statically.
 
-Porém, os fluxos de interação após a realização dos desafios, ainda precisam ser
-melhorados. Dessa forma, o objetivo deste desafio, é utilizar códigos QR para promover
-interações entre os participantes do programa, através da geração de um código QR para
-cada integrante da plataforma e de um leitor de códigos QR, para ler o conteúdo destes
-códigos, que contém as informações pessoais públicas do integrante, para promover de maneira
-simples e fácil, o acesso as redes sociais do integrante.
+However, the interaction flows after the completion of the challenges still need to be improved. The objective of this challenge is to use QR codes to promote interactions between the participants of the program, by generating a QR code for each member of the platform and a QR code reader to read the content of these codes, which contain the member's personal public information, in order to promote, in a simple and easy way, access to the member's social networks.
 
-Instructions _(⚠️  MISSING TRANSLATE)_
+Requirements
 ---
 
-> Todas as configurações necessárias já foram criadas, se sentir
-falta de algo, contate os instrutores/mentores.
+> All the necessary settings have already been created, if you feel something is missing, contact the instructors/mentors.
 
-- Tenha certeza que você está na pasta do projeto:
+- node: ^12.16.1 (lts/erbium)
+- CocoaPods: ^1.8
+- yarn: ^1.17.3 (you're not enabled or allowed to use yarn version 3)
 
-```bash
-$ cd $PASTA_DO_PROJETO
-```
-
-- Tenha a versão correta do Node instalada e use-a para o projeto:
-
-> ^12.16.1 (lts/erbium)
+**Installing the supported node version through nvm:**
 
 ```bash
 $ nvm install # to install and use the project node version specified .nvmrc
 ```
 
-- Instalando as dependências do projeto:
+Getting started
+---
 
-**Node (React Native):**
+### 1. Install
 
-> Tenha certeza que você está utilizando corretamente as versões
-correspondentes
-
-- CocoaPods: ^1.8
-- yarn: ^1.17.3
-
-_Tenha certeza que você está usando a versão correta do yarn_
-
-> Não está habilitado ou permitido usar a versão 3 do yarn
-
-```bash
-$ yarn --version # to display the current yarn version
-```
-
-_Para instalar as dependências do node, configuradas no projeto,
-basta você estar na pasta do projeto e executar o comando do yarn
-para instalar as depedências do node configurada no `package.json`,
-através do seguinte comando:_
+Install the node dependencies configured in the project, you can simply go to the project folder and run the yarn command to install the node dependencies configured in the package.json by the following command:
 
 ```bash
 $ yarn # to install the lock dependencies at yarn
@@ -73,37 +40,101 @@ $ yarn # to install the lock dependencies at yarn
 
 **iOS:**
 
-_Se você estiver no MacOS, você precisará instalar as dependências
-do iOS através do cocoapods, então tenha certeza que você tem instalado
-corretamente a versão 1.8+ do cocoapods localmente:_
+If you are on macOS, you will need to install the iOS dependencies via cocoapods as well, so make sure you have the 1.8+ version of cocoapods installed correctly:
 
 ```bash
 $ pod --version # to display the current cocoapods version
 ```
 
-_Para instalar as dependências do iOS com o cocoapods, basta você
-entrar na pasta do `ios` no projeto e executar o comando do cocoapods
-para instalar dependencias através do seguinte comando:_
+Simply enter the ios folder in the project and run the cocoapods command to install dependencies via the following command:_
 
 ```bash
 $ cd ios/ # to open the iOS project directory
 $ pod install # to display the current cocoapods version
 ```
 
-- React Native Debugger:
+### 2. Start the packager for development with metro bundler:
+
+```bash
+$ yarn start # or npm start
+```
+
+_If you want to open the react native debugger by default, run the following command:_
+
+```bash
+$ REACT_DEBUGGER="yarn open:debugger" yarn start
+```
+
+**Windows:**
+
+```bash
+$ set REACT_DEBUGGER="yarn open:debugger" && yarn start
+```
+
+### 3. Build and test:
+
+**iOS:**
+
+```bash
+$ yarn react-native run-ios
+```
+
+_If you want to run on a specific model in the simulator, run the following command:_
+
+```bash
+$ yarn react-native run-ios --simulator "iPhone 7"
+```
+
+_If you want to run the iOS app on a physical device, you will need to use ios-deploy, available for download from npm, so just run the following command to install ios-deploy globally:_
+
+```bash
+$ npm install -g ios-deploy # to install `ios-deploy` globally to use it directly
+```
+
+_Now, you need to make sure that your device is connected and synchronized correctly with your computer, so you just copy the name of the physically connected device, using the following command:_
+
+> To make sure your device is accessed correctly, make sure the phone is unlocked
+
+```bash
+$ ios-deploy --detect # to get and display the connected device
+```
+
+The result of the above command should look like the image below:
+
+> In the case of the image below, the device name is `Renato's iPhone`, as selected and demarcated for easy viewing
+
+![iOS Deploy](https://i.imgur.com/j4Mn8Ob.png)
+
+_Now, using the device name that you copied in the command above, you can use it to install and open the application on this device, using the following command:_
+
+```bash
+$ yarn react-native run-ios --device "Renato’s iPhone"
+```
+
+**Android:**
+
+```bash
+$ yarn react-native run-android
+```
+
+_If you are using a physical android device, run the following command:_
+
+```bash
+$ yarn android:ports
+```
+
+### 4. Debugging
 
 ```bash
 $ yarn open:debugger  # to open the react-native-debugger
 ```
 
-- Toda a estrutura básica necessária para o projeto
-está na pasta `/src`:
+Project
+---
 
-> Você deve, e pode evoluir essa estrutura da maneira que você
-achar e julgar necessária para evoluir e cumprir os requisitos
-esperados para o desafio, o que você não pode fazer, pois pode
-afetar sua nota, é excluir ou modificar os nomes dos componentes
-que já existem.
+All the basic structure needed for the project is in the /src folder:
+
+> You might want evolve this structure as you see fit and necessary, so feel free to make it better as you judge reasonsable right. what you only cannot do, because it'll probably affect your grade, is deleting or modifying the main component's name because the automation uses it to grade your code and solution.
 
 ```unicode
 .
@@ -130,104 +161,23 @@ que já existem.
 |       └── Home/ # Tela inicial do aplicativo depois que os passos do onboarding estão concluídos
 ```
 
-- Você pode usar os testes pra lhe auxiliar no desenvolvimento
-do desafio, e garantir que suas correções tiveram o efeito esperado:
+Testing
+---
 
-**Rodando todos os testes:**
+You can use the tests to assist you in developing the challenge, and ensure that your fixes had the expected effect:
 
-> Usando este modo, todos os testes serão executados todos de uma vez, um por um
+### Running all tests:
+
+> Using this mode, all tests run all at once, sequentially one by one
 
 ```bash
 $ yarn test # or npm test
 ```
 
-**Rodando os testes em desenvolvimento:**
+**Running tests in development:**
 
-> Usando este modo, os testes serão re-executados a cada mudança feita
-no código
+> Using this mode, the tests will be re-run with each change made to the code
 
 ```bash
 $ yarn test:watch # or npm run test:watch
-```
-
-- Para iniciar o packager para desenvolvimento com metro bundler:
-
-```bash
-$ yarn start # or npm start
-```
-
-_Se você querer abrir por padrão o react native debugger,
-execute o seguinte comando:_
-
-```bash
-$ REACT_DEBUGGER="yarn open:debugger" yarn start
-```
-
-**Windows:**
-
-```bash
-$ set REACT_DEBUGGER="yarn open:debugger" && yarn start
-```
-
-- Para buildar e testar a aplicação:
-
-**iOS:**
-
-```bash
-$ yarn react-native run-ios
-```
-
-_Se você querer rodar em um modelo especifico no simulador,
-execute o seguinte comando:_
-
-```bash
-$ yarn react-native run-ios --simulator "iPhone 7"
-```
-
-_Se você querer rodar o aplicativo iOS em um dispositivo fisico,
-você precisará utilizar o `ios-deploy`, disponível para download
-no npm, então basta executar o seguinte comando para instalar o
-`ios-deploy` globalmente:_
-
-```bash
-$ npm install -g ios-deploy # to install `ios-deploy` globally to use it directly
-```
-
-_Agora, você precisa se certificar que seu dispositivo está conectado
-e sincronizado corretamente com seu computador, então basta você copiar
-o nome do dispositivo fisico conectado, através do seguinte comando:_
-
-> Para ter certeza que seu dispositivo será acessado corretamente,
-tenha certeza que o telefone esteja desbloqueado
-
-```bash
-$ ios-deploy --detect # to get and display the connected device
-```
-
-O resultado do comando acima, deve se parecer com a imagem abaixo:
-
-> No caso da imagem abaixo, o nome do dispositivo é `Renato's iPhone`,
-como selecionado e demarcado para facilitar a visualização
-
-![iOS Deploy](https://i.imgur.com/j4Mn8Ob.png)
-
-_Agora, através do nome do dispositivo que você copiou no comando à cima,
-você poderá usá-lo para instalar e abrir o aplicativo neste dispositivo,
-através do seguinte comando:_
-
-```bash
-$ yarn react-native run-ios --device "Renato’s iPhone"
-```
-
-**Android:**
-
-```bash
-$ yarn react-native run-android
-```
-
-_Se você estiver usando um aparelho fisico android,
-execute o seguinte comando:_
-
-```bash
-$ yarn android:ports
 ```
